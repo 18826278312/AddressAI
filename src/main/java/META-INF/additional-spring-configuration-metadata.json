@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "address.blindUrl",
+    "type": "java.lang.String",
+    "description": "A description for 'address.blindUrl'"
+  },
+  {
+    "name": "address.manageUrl",
+    "type": "java.lang.String",
+    "description": "A description for 'address.manageUrl'"
+  },
+  {
+    "name": "address.blindUrl",
+    "type": "java.lang.String",
+    "description": "A description for 'address.blindUrl'"
+  },
+  {
+    "name": "address.blindUrl",
+    "type": "java.lang.String",
+    "description": "A description for 'address.blindUrl'"
+  },
+  {
+    "name": "address.ak",
+    "type": "java.lang.String",
+    "description": "A description for 'address.ak'"
+  }
+]}
