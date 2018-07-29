@@ -1,0 +1,28 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+    <title>Baidu Map </title>  
+    <style type="text/css">  
+        html{height:100%}  
+        body{height:100%;margin:0px;padding:0px}
+        #container{height:100%}  
+    </style>  
+    <link rel="stylesheet" href="../css/address.css"/>
+</head>  
+<body>
+<div id="content" class="content">
+	<input id="address" class="address" type="text" placeholder="请输入报装地址">
+    <button id="search" class="search">搜索</button>
+    <div id="prompt" class="prompt"></div>
+</div>
+<button id="blind" class="blind">显示盲区</button>
+<button id="manage" class="manage">显示管辖区域</button>
+<div id="container"></div> 
+</body>
+<script type="text/javascript" src="http://lbsyun.baidu.com/jsdemo/data/points-sample-data.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ijfwv9AuV1fGln7IFVoBCarOs8GE0pxb"></script>
+<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../js/address.js"></script>
+</html>

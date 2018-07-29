@@ -1,0 +1,64 @@
+.content{
+	top:20px;
+	left:20px;
+	z-index:999;
+	position:absolute;
+}
+.address{
+	box-sizing: border-box;
+	float: left;
+	width: 300px;
+	height: 40px;
+	font-size:15px;
+	padding-left:10px;
+}
+
+.search{
+	float: left;
+	width: 50px;
+	height: 40px;
+	font-size:15px;
+	background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+}
+
+.prompt{
+	background-color:white;
+	margin-top:48px;
+	padding:10px 15px 10px 0;
+	width: 335px;
+	max-height:800px;
+	font-size:15px;
+	display:none;
+	overflow:auto;
+}
+
+.manage{
+	top:20px;
+	right:20px;
+	z-index:999;
+	position:absolute;
+	width: 120px;
+	height: 40px;
+	font-size:15px;
+	background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+}
+
+.blind{
+	top:20px;
+	right:150px;
+	z-index:999;
+	position:absolute;
+	width: 100px;
+	height: 40px;
+	font-size:15px;
+	background-color: #00008B;
+    border: none;
+    color: white;
+    text-align: center;
+}
