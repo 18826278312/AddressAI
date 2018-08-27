@@ -415,3 +415,10 @@ map.addEventListener("click",function(e){
 		map.centerAndZoom(centerPoint,mapZoom);
 	},"json");
 });
+
+$('#address').bind('keypress',function(event){ 
+    if(event.keyCode == "13"){
+    	$('#search').click();
+    }  
+
+});

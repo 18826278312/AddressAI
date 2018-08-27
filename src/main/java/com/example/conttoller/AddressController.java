@@ -6,7 +6,10 @@ import java.util.List;
 import java.util.Map;
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,6 +19,7 @@ import com.example.dto.GeocoderDto;
 import com.example.dto.PlaceDto;
 import com.example.service.AddressService;
 import com.example.util.FileUtil;
+import com.example.util.LoadConfig;
 import com.example.vo.AddressVo;
 
 @Controller
@@ -24,14 +28,17 @@ public class AddressController {
 
 	@Resource
 	private AddressService addressService;
-	@Value("${address.manageUrl}")
 	private String manageUrl;
-	@Value("${address.blindUrl}")
 	private String blindUrl;
 	@Value("${small.range}")
 	private Double smallRange;
 	@Value("${big.range}")
 	private Double bigRange;
+	
+	public AddressController() {
+		manageUrl = LoadConfig.getValue("address.manageUrl");
+		blindUrl = LoadConfig.getValue("address.blindUrl");
+	}
 	
 	@RequestMapping(value="/address")
 	public String address(){
@@ -57,6 +64,7 @@ public class AddressController {
 			map.put("blindList", blindList);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			map.put("status", 5);
 			map.put("info", "系统异常：" + e.toString());
 		}

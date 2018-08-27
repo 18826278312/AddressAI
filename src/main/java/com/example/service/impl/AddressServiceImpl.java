@@ -1,6 +1,7 @@
 package com.example.service.impl;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -11,16 +12,20 @@ import com.example.dto.PlaceResult;
 import com.example.service.AddressService;
 import com.example.util.FileUtil;
 import com.example.util.HttpUtil;
+import com.example.util.LoadConfig;
 import com.example.vo.AddressVo;
 
 @Service
 public class AddressServiceImpl implements AddressService{
 
-	@Value("${address.ak}")
 	private String ak;
-	@Value("${address.manageUrl}")
 	private String manageUrl;
 	
+	public AddressServiceImpl() {
+		ak = LoadConfig.getValue("address.ak");
+		manageUrl = LoadConfig.getValue("address.manageUrl");
+	}
+
 	private static double rad(double d) { 
         return d * Math.PI / 180.0; 
     }
@@ -85,14 +90,13 @@ public class AddressServiceImpl implements AddressService{
 		                + Math.cos(rad(lat)) * Math.cos(rad(addressVo.getLat()))
 		                * Math.pow(Math.sin(mdifference / 2), 2)));
 			distance = distance * 6378.137;
-		    distance = Math.round(distance * 10000) / 10000;
+		    distance = Math.round(distance * 10000) / 10000d;
 		    if (distance<range) {
-		    	System.out.println(json);
+		    	addressVo.setDistance(distance);
 				addressVos.add(addressVo);
 			}
 		}
-		// TODO Auto-generated method stub
+		Collections.sort(addressVos);
 		return addressVos;
 	}
-
 }
